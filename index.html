@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DISNACEROS · ERP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { background: #1C1917; }
+      #root { min-height: 100vh; }
+      #splash { position:fixed;inset:0;background:#1C1917;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .4s }
+      #splash.hide{opacity:0;pointer-events:none}
+      .s-ic{width:56px;height:56px;background:#EA580C;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px}
+      .s-nm{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:#fff;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+      .s-sb{font-family:system-ui,sans-serif;font-size:11px;color:#78716C;text-transform:uppercase;letter-spacing:1.5px}
+      .s-bar{width:120px;height:3px;background:#292524;border-radius:2px;margin-top:28px;overflow:hidden}
+      .s-fill{height:100%;width:0;background:#EA580C;border-radius:2px;animation:ld 1.5s ease forwards}
+      @keyframes ld{to{width:100%}}
+    </style>
+  </head>
+  <body>
+    <div id="splash">
+      <div class="s-ic">⚡</div>
+      <div class="s-nm">DISNACEROS</div>
+      <div class="s-sb">Sistema Empresarial v3.0</div>
+      <div class="s-bar"><div class="s-fill"></div></div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>window.hideSplash=()=>{const s=document.getElementById('splash');if(s){s.classList.add('hide');setTimeout(()=>s.remove(),500);}}</script>
+  </body>
+</html>
